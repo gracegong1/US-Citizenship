@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
+class ReviewQuestionViewController: UIViewController {
+    
+}

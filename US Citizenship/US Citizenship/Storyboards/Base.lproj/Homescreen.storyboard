@@ -33,7 +33,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fd-Cg-Bag">
-                                <rect key="frame" x="21" y="190" width="333" height="457"/>
+                                <rect key="frame" x="21" y="205" width="333" height="442"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kYd-he-0rH">
@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="utD-p8-tbk">
@@ -73,7 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Ra3-Li-dEM" kind="show" id="yhC-yd-lfb"/>
+                        <segue destination="Ra3-Li-dEM" kind="show" identifier="hometosettings" id="yhC-yd-lfb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,7 +105,7 @@
                                 <state key="normal" title="Reset Data"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="gj0-vQ-TcP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Uin-iV-LfL"/>
@@ -134,6 +134,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1vS-wR-Q1n"/>
+        <segue reference="yhC-yd-lfb"/>
     </inferredMetricsTieBreakers>
 </document>
