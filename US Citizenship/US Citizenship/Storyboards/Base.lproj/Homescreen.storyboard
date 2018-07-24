@@ -43,6 +43,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-um-gvR">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
                                                 <state key="normal" title="Review"/>
+                                                <connections>
+                                                    <segue destination="82a-Vy-7qY" kind="show" identifier="displayReviewIntro" id="Tvj-JN-r9r"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-yK-MH8">
                                                 <rect key="frame" x="0.0" y="30" width="120" height="30"/>
@@ -79,6 +82,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+        </scene>
+        <!--Review-->
+        <scene sceneID="Rzv-dr-rTe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Review" id="82a-Vy-7qY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kbu-9P-M08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="-303"/>
         </scene>
         <!--Settings-->
         <scene sceneID="wAf-uh-SpL">
