@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-struct ReviewQuestion {
-    var ReviewQuestion : String!
-    var ReviewPossibleAnswers : [String]!
-    var ReviewCorrectAnswers : Int!
-}
-
 class ReviewQuestionViewController: UIViewController {
     
     @IBOutlet weak var ReviewQLabel: UILabel!
     @IBOutlet var ReviewButtons: [UIButton]!
+    
+    
+    @IBOutlet weak var ReviewButton1: UIButton!
+    @IBOutlet weak var ReviewButton2: UIButton!
+    @IBOutlet weak var ReviewButton3: UIButton!
+    @IBOutlet weak var ReviewButton4: UIButton!
     
     var ReviewQuestions = [ReviewQuestion]()
     var ReviewQNumber = Int()
@@ -50,6 +50,8 @@ class ReviewQuestionViewController: UIViewController {
             
             for i in 0..<ReviewButtons.count {
                 ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewPossibleAnswers[i], for: UIControlState.normal)
+                ReviewButtons[i].backgroundColor = UIColor.white
+                ReviewButtons[i].setTitleColor(UIColor.black, for: UIControlState.normal)
             }
             ReviewQuestions.remove(at: ReviewQNumber)
         } else {
@@ -60,30 +62,41 @@ class ReviewQuestionViewController: UIViewController {
     @IBAction func ReviewBtn1(_ sender: Any) {
         
         if ReviewCorrectAnswerNumbers == 0 {
-            PickReviewQuestion()
+            ReviewButton1.backgroundColor = UIColor.green
+            ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
         }
     }
     @IBAction func ReviewBtn2(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 1 {
-            PickReviewQuestion()
+            ReviewButton2.backgroundColor = UIColor.green
+            ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
         }
     }
     @IBAction func ReviewBtn3(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 2 {
-            PickReviewQuestion()
+            ReviewButton3.backgroundColor = UIColor.green
+            ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
         }
     }
     @IBAction func ReviewBtn4(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 3 {
-            PickReviewQuestion()
+            ReviewButton4.backgroundColor = UIColor.green
+            ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
+        }
+    }
+    @IBAction func ReviewNextBtn(_ sender: Any) {
+        if ReviewQuestions.count == 0 {
+            self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
+        } else {
+            PickReviewQuestion()
         }
     }
 }
