@@ -13,6 +13,8 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBOutlet weak var ReviewQLabel: UILabel!
     @IBOutlet var ReviewButtons: [UIButton]!
+    @IBOutlet weak var QuestionNumOfNumLabel: UILabel!
+    @IBOutlet weak var QuestionsProgressView: UIProgressView!
     
     
     @IBOutlet weak var ReviewButton1: UIButton!
@@ -30,7 +32,7 @@ class ReviewQuestionViewController: UIViewController {
         
         ReviewQuestions =
             [ReviewQuestion(ReviewQuestion: "What is one responsibility that is only for United States citizens?", ReviewPossibleAnswers: ["serve on a jury", "pay taxes", "be respectful of others", "obey the law"], ReviewCorrectAnswers: 0),
-             ReviewQuestion(ReviewQuestion: "Name is U.S. war between the North and the South?", ReviewPossibleAnswers: ["The Civil War", "World War I", "the Revolutionary War", "The War of 1812"], ReviewCorrectAnswers: 0),
+             ReviewQuestion(ReviewQuestion: "Name the U.S. war between the North and the South.", ReviewPossibleAnswers: ["The Civil War", "World War I", "the Revolutionary War", "The War of 1812"], ReviewCorrectAnswers: 0),
              ReviewQuestion(ReviewQuestion: "The idea of self-government is in the first three words of the Constitution. What are these words?", ReviewPossibleAnswers: ["Congress shall make", "We the British", "We the People", "We the Colonists"], ReviewCorrectAnswers: 2),
              ReviewQuestion(ReviewQuestion: "What is one thing Benjamin Franklin is famous for?", ReviewPossibleAnswers: ["inventor of the airplane", "third president of the United States", "youngest member of the Constitutional Convention", "U.S. diplomat"], ReviewCorrectAnswers: 3),]
         
@@ -43,7 +45,8 @@ class ReviewQuestionViewController: UIViewController {
     }
     func PickReviewQuestion() {
         if ReviewQuestions.count > 0 {
-            ReviewQNumber = 0
+            ReviewQNumber = Int(arc4random_uniform(UInt32(ReviewQuestions.count)))
+            
             ReviewQLabel.text = ReviewQuestions[ReviewQNumber].ReviewQuestion
             
             ReviewCorrectAnswerNumbers = ReviewQuestions[ReviewQNumber].ReviewCorrectAnswers
@@ -66,6 +69,8 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
+            ReviewButton1.backgroundColor = UIColor.red
+            ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
     }
     @IBAction func ReviewBtn2(_ sender: Any) {
@@ -74,6 +79,8 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
+            ReviewButton2.backgroundColor = UIColor.red
+            ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
     }
     @IBAction func ReviewBtn3(_ sender: Any) {
@@ -82,6 +89,8 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
+            ReviewButton3.backgroundColor = UIColor.red
+            ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
     }
     @IBAction func ReviewBtn4(_ sender: Any) {
@@ -90,6 +99,8 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         } else {
             NSLog("Wrong!")
+            ReviewButton4.backgroundColor = UIColor.red
+            ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
     }
     @IBAction func ReviewNextBtn(_ sender: Any) {
@@ -97,6 +108,6 @@ class ReviewQuestionViewController: UIViewController {
             self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
         } else {
             PickReviewQuestion()
-        }
+            QuestionNumOfNumLabel.text = "Question \(20 - ReviewQuestions.count) of 20"}
     }
 }

@@ -26,13 +26,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-7m-iaG">
-                                <rect key="frame" x="10" y="562" width="349" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-7w-XsV">
+                                <rect key="frame" x="20" y="84" width="335" height="468"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJD-H3-8ig">
-                                        <rect key="frame" x="99" y="12" width="150" height="70"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-Vp-ryb">
+                                        <rect key="frame" x="11" y="34" width="312" height="179"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">The review is 20 multiple-choice questions out of the 100 on the actual test. On the actual test, the questions are not multiple choice, but rather you must be able to produce the right answer given no choices.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTV-mV-hI0">
+                                        <rect key="frame" x="109" y="255" width="117" height="62"/>
+                                        <state key="normal" title="Random"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="bTV-mV-hI0" firstAttribute="centerX" secondItem="DjJ-7w-XsV" secondAttribute="centerX" id="8kg-SC-4Lx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-7m-iaG">
+                                <rect key="frame" x="20" y="572" width="335" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJD-H3-8ig">
+                                        <rect key="frame" x="151.5" y="25" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <segue destination="LzO-hA-pdx" kind="show" identifier="displayReviewQuestion" id="K4s-l7-XgP"/>
@@ -40,29 +59,24 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-7w-XsV">
-                                <rect key="frame" x="10" y="74" width="355" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTV-mV-hI0">
-                                        <rect key="frame" x="159" y="331" width="57" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Random"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-Vp-ryb">
-                                        <rect key="frame" x="15" y="57" width="352" height="179"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">The review is 20 multiple-choice questions out of the 100 on the actual test. On the actual test, the questions are not multiple choice, but rather you must be able to produce the right answer given no choices.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mJD-H3-8ig" firstAttribute="centerX" secondItem="Kq2-7m-iaG" secondAttribute="centerX" id="Vuc-Hr-5gN"/>
+                                    <constraint firstItem="mJD-H3-8ig" firstAttribute="centerY" secondItem="Kq2-7m-iaG" secondAttribute="centerY" id="t2O-lg-8B2"/>
+                                    <constraint firstAttribute="height" constant="80" id="x5v-jv-HbI"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a3f-8P-ruU" firstAttribute="trailing" secondItem="DjJ-7w-XsV" secondAttribute="trailing" constant="20" id="1IC-CU-eS3"/>
+                            <constraint firstItem="a3f-8P-ruU" firstAttribute="trailing" secondItem="Kq2-7m-iaG" secondAttribute="trailing" constant="20" id="6au-0f-6ai"/>
+                            <constraint firstItem="DjJ-7w-XsV" firstAttribute="leading" secondItem="a3f-8P-ruU" secondAttribute="leading" constant="20" id="Iwf-5S-idZ"/>
+                            <constraint firstItem="Kq2-7m-iaG" firstAttribute="width" secondItem="DjJ-7w-XsV" secondAttribute="width" id="Qbx-Vb-euo"/>
+                            <constraint firstItem="DjJ-7w-XsV" firstAttribute="top" secondItem="a3f-8P-ruU" secondAttribute="top" constant="20" id="SiZ-fE-wwm"/>
+                            <constraint firstItem="Kq2-7m-iaG" firstAttribute="leading" secondItem="a3f-8P-ruU" secondAttribute="leading" constant="20" id="sHT-Fz-VzH"/>
+                            <constraint firstItem="Kq2-7m-iaG" firstAttribute="top" secondItem="DjJ-7w-XsV" secondAttribute="bottom" constant="20" id="tgy-iJ-0lN"/>
+                            <constraint firstItem="a3f-8P-ruU" firstAttribute="bottom" secondItem="Kq2-7m-iaG" secondAttribute="bottom" constant="15" id="zeF-W6-zzI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a3f-8P-ruU"/>
                     </view>
                     <navigationItem key="navigationItem" title="Review" id="ofQ-JU-ZUj">
@@ -103,7 +117,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question blah of blah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA2-s5-lpe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OA2-s5-lpe">
                                         <rect key="frame" x="80" y="30" width="183" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -209,6 +223,8 @@
                         <viewLayoutGuide key="safeArea" id="jUL-3h-ley"/>
                     </view>
                     <connections>
+                        <outlet property="QuestionNumOfNumLabel" destination="OA2-s5-lpe" id="yRh-Uh-viT"/>
+                        <outlet property="QuestionsProgressView" destination="h8U-Uy-B5G" id="Hxz-PC-HO0"/>
                         <outlet property="ReviewButton1" destination="EnG-TI-gqR" id="7NF-cZ-NRk"/>
                         <outlet property="ReviewButton2" destination="6xl-OD-E8l" id="PHR-B8-n0O"/>
                         <outlet property="ReviewButton3" destination="lXr-nE-Kji" id="1Tg-CI-Dqf"/>

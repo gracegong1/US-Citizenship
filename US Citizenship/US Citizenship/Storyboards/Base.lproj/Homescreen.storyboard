@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xT5-zk-ik5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xT5-zk-ik5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="US Citizenship Test Prep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs4-Cq-v6B">
                                         <rect key="frame" x="93" y="49" width="189" height="21"/>
@@ -31,41 +30,62 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="rjc-JS-LXD"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fd-Cg-Bag">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fd-Cg-Bag">
                                 <rect key="frame" x="21" y="205" width="333" height="442"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kYd-he-0rH">
-                                        <rect key="frame" x="106" y="53" width="120" height="120"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="kYd-he-0rH">
+                                        <rect key="frame" x="15" y="20" width="303" height="402"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-um-gvR">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ7-um-gvR">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="70.5"/>
                                                 <state key="normal" title="Review"/>
                                                 <connections>
                                                     <segue destination="82a-Vy-7qY" kind="show" identifier="displayReviewIntro" id="Tvj-JN-r9r"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-yK-MH8">
-                                                <rect key="frame" x="0.0" y="30" width="120" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-yK-MH8">
+                                                <rect key="frame" x="0.0" y="110.5" width="303" height="70.5"/>
                                                 <state key="normal" title="Practice Test"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-0v-yLx">
-                                                <rect key="frame" x="0.0" y="60" width="120" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-0v-yLx">
+                                                <rect key="frame" x="0.0" y="221" width="303" height="70.5"/>
                                                 <state key="normal" title="All 100 Questions"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbi-46-IoW">
-                                                <rect key="frame" x="0.0" y="90" width="120" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbi-46-IoW">
+                                                <rect key="frame" x="0.0" y="331.5" width="303" height="70.5"/>
                                                 <state key="normal" title="Statistics"/>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="p0a-0v-yLx" firstAttribute="height" secondItem="lJ7-um-gvR" secondAttribute="height" id="CQf-tR-fqu"/>
+                                            <constraint firstItem="vbE-yK-MH8" firstAttribute="height" secondItem="lJ7-um-gvR" secondAttribute="height" id="Tuw-7Z-JFR"/>
+                                            <constraint firstItem="pbi-46-IoW" firstAttribute="height" secondItem="lJ7-um-gvR" secondAttribute="height" id="YR9-Nh-N2P"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kYd-he-0rH" firstAttribute="top" secondItem="8fd-Cg-Bag" secondAttribute="top" constant="20" id="Bbi-M1-gDr"/>
+                                    <constraint firstAttribute="bottom" secondItem="kYd-he-0rH" secondAttribute="bottom" constant="20" id="NEc-VQ-YrO"/>
+                                    <constraint firstItem="kYd-he-0rH" firstAttribute="leading" secondItem="8fd-Cg-Bag" secondAttribute="leading" constant="15" id="PaH-ot-3zB"/>
+                                    <constraint firstAttribute="trailing" secondItem="kYd-he-0rH" secondAttribute="trailing" constant="15" id="Ssx-sj-gKv"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xT5-zk-ik5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9dT-9X-c3R"/>
+                            <constraint firstItem="xT5-zk-ik5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FK2-SA-nN9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8fd-Cg-Bag" secondAttribute="bottom" constant="20" id="Vh7-KU-VoU"/>
+                            <constraint firstItem="xT5-zk-ik5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YhC-t1-hw9"/>
+                            <constraint firstItem="8fd-Cg-Bag" firstAttribute="top" secondItem="xT5-zk-ik5" secondAttribute="bottom" constant="23" id="cWI-IY-aMe"/>
+                            <constraint firstItem="8fd-Cg-Bag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="kB6-Ia-PLv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8fd-Cg-Bag" secondAttribute="trailing" constant="21" id="vTL-VU-Khy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="utD-p8-tbk">
@@ -145,6 +165,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yhC-yd-lfb"/>
+        <segue reference="1vS-wR-Q1n"/>
     </inferredMetricsTieBreakers>
 </document>
