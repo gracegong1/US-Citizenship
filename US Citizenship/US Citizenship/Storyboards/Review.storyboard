@@ -29,22 +29,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-7w-XsV">
                                 <rect key="frame" x="20" y="84" width="335" height="468"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-Vp-ryb">
-                                        <rect key="frame" x="11" y="34" width="312" height="179"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4a-Vp-ryb">
+                                        <rect key="frame" x="11" y="20" width="313" height="122"/>
                                         <string key="text">The review is 20 multiple-choice questions out of the 100 on the actual test. On the actual test, the questions are not multiple choice, but rather you must be able to produce the right answer given no choices.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTV-mV-hI0">
-                                        <rect key="frame" x="109" y="255" width="117" height="62"/>
-                                        <state key="normal" title="Random"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="bTV-mV-hI0" firstAttribute="centerX" secondItem="DjJ-7w-XsV" secondAttribute="centerX" id="8kg-SC-4Lx"/>
+                                    <constraint firstItem="i4a-Vp-ryb" firstAttribute="leading" secondItem="DjJ-7w-XsV" secondAttribute="leading" constant="11" id="5fw-ES-z5H"/>
+                                    <constraint firstItem="i4a-Vp-ryb" firstAttribute="top" secondItem="DjJ-7w-XsV" secondAttribute="top" constant="20" id="iAI-aE-9E8"/>
+                                    <constraint firstItem="i4a-Vp-ryb" firstAttribute="centerX" secondItem="DjJ-7w-XsV" secondAttribute="centerX" id="pfc-M2-g6B"/>
+                                    <constraint firstAttribute="trailing" secondItem="i4a-Vp-ryb" secondAttribute="trailing" constant="11" id="spv-tI-Xh9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-7m-iaG">

@@ -23,6 +23,7 @@ class ReviewQuestionViewController: UIViewController {
     @IBOutlet weak var ReviewButton4: UIButton!
     
     var ReviewQuestions = [ReviewQuestion]()
+    let questionsObject = USGov()
     var ReviewQNumber = Int()
     var ReviewCorrectAnswerNumbers = Int()
     
@@ -30,11 +31,8 @@ class ReviewQuestionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        ReviewQuestions =
-            [ReviewQuestion(ReviewQuestion: "What is one responsibility that is only for United States citizens?", ReviewPossibleAnswers: ["serve on a jury", "pay taxes", "be respectful of others", "obey the law"], ReviewCorrectAnswers: 0),
-             ReviewQuestion(ReviewQuestion: "Name the U.S. war between the North and the South.", ReviewPossibleAnswers: ["The Civil War", "World War I", "the Revolutionary War", "The War of 1812"], ReviewCorrectAnswers: 0),
-             ReviewQuestion(ReviewQuestion: "The idea of self-government is in the first three words of the Constitution. What are these words?", ReviewPossibleAnswers: ["Congress shall make", "We the British", "We the People", "We the Colonists"], ReviewCorrectAnswers: 2),
-             ReviewQuestion(ReviewQuestion: "What is one thing Benjamin Franklin is famous for?", ReviewPossibleAnswers: ["inventor of the airplane", "third president of the United States", "youngest member of the Constitutional Convention", "U.S. diplomat"], ReviewCorrectAnswers: 3),]
+        ReviewQuestions = questionsObject.list
+            
         
         PickReviewQuestion()
     }
