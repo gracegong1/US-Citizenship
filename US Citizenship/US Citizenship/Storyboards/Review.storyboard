@@ -119,33 +119,47 @@
                                 <rect key="frame" x="16" y="203" width="343" height="371"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="61Q-Tp-mnL">
-                                        <rect key="frame" x="137" y="42" width="69" height="260.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="61Q-Tp-mnL">
+                                        <rect key="frame" x="71" y="45" width="200" height="260.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-hm-oK1">
-                                                <rect key="frame" x="0.0" y="0.0" width="69" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1P-hm-oK1">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnG-TI-gqR">
-                                                <rect key="frame" x="0.0" y="50.5" width="69" height="30"/>
+                                                <rect key="frame" x="0.0" y="50.5" width="200" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="ReviewBtn1:" destination="LzO-hA-pdx" eventType="touchUpInside" id="6Lp-Gy-srW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xl-OD-E8l">
-                                                <rect key="frame" x="0.0" y="110.5" width="69" height="30"/>
+                                                <rect key="frame" x="0.0" y="110.5" width="200" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="ReviewBtn2:" destination="LzO-hA-pdx" eventType="touchUpInside" id="7EW-rd-6LO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXr-nE-Kji">
-                                                <rect key="frame" x="0.0" y="170.5" width="69" height="30"/>
+                                                <rect key="frame" x="0.0" y="170.5" width="200" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="ReviewBtn3:" destination="LzO-hA-pdx" eventType="touchUpInside" id="6DN-Jb-Ih9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbe-By-r7y">
-                                                <rect key="frame" x="0.0" y="230.5" width="69" height="30"/>
+                                                <rect key="frame" x="0.0" y="230.5" width="200" height="30"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="ReviewBtn4:" destination="LzO-hA-pdx" eventType="touchUpInside" id="GyQ-6D-W08"/>
+                                                </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="336-Lc-LVR"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,6 +169,11 @@
                         <viewLayoutGuide key="safeArea" id="jUL-3h-ley"/>
                     </view>
                     <connections>
+                        <outlet property="ReviewQLabel" destination="D1P-hm-oK1" id="3ca-Bg-NqK"/>
+                        <outletCollection property="ReviewButtons" destination="EnG-TI-gqR" collectionClass="NSMutableArray" id="8RG-JT-1bD"/>
+                        <outletCollection property="ReviewButtons" destination="6xl-OD-E8l" collectionClass="NSMutableArray" id="upk-WB-1pI"/>
+                        <outletCollection property="ReviewButtons" destination="lXr-nE-Kji" collectionClass="NSMutableArray" id="L55-8Q-pq6"/>
+                        <outletCollection property="ReviewButtons" destination="sbe-By-r7y" collectionClass="NSMutableArray" id="MQH-uU-W2m"/>
                         <segue destination="xmw-jV-DgB" kind="show" identifier="displayReviewResults" id="Ddf-JD-yTQ"/>
                     </connections>
                 </viewController>
