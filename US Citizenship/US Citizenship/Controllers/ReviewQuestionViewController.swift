@@ -31,7 +31,7 @@ class ReviewQuestionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        ReviewQuestions = questionsObject.list
+        ReviewQuestions = questionsObject.ReviewQList
             
         
         PickReviewQuestion()
@@ -55,7 +55,7 @@ class ReviewQuestionViewController: UIViewController {
                 ReviewButtons[i].setTitleColor(UIColor.black, for: UIControlState.normal)
             }
             ReviewQuestions.remove(at: ReviewQNumber)
-        } else {
+        } else if ReviewQuestions.count < 3 {
             NSLog("Done!")
         }
     }
@@ -102,10 +102,10 @@ class ReviewQuestionViewController: UIViewController {
         }
     }
     @IBAction func ReviewNextBtn(_ sender: Any) {
-        if ReviewQuestions.count == 0 {
+        if ReviewQuestions.count < 3 {
             self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
         } else {
             PickReviewQuestion()
-            QuestionNumOfNumLabel.text = "Question \(20 - ReviewQuestions.count) of 20"}
+            QuestionNumOfNumLabel.text = "Question \(22 - ReviewQuestions.count) of 20"}
     }
 }
