@@ -49,7 +49,7 @@ class USGov {
          
          
         ].forEach { (question) in
-            list.append(question)
+            ReviewQList.append(question)
         }
         
     }
