@@ -21,6 +21,7 @@ class ReviewQuestionViewController: UIViewController {
     @IBOutlet weak var ReviewButton2: UIButton!
     @IBOutlet weak var ReviewButton3: UIButton!
     @IBOutlet weak var ReviewButton4: UIButton!
+    @IBOutlet weak var ReviewNextButton: UIButton!
     
     var ReviewQuestions = [ReviewQuestion]()
     let questionsObject = USGov()
@@ -65,6 +66,11 @@ class ReviewQuestionViewController: UIViewController {
                 ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewPossibleAnswers[i], for: UIControlState.normal)
                 ReviewButtons[i].backgroundColor = UIColor.white
                 ReviewButtons[i].setTitleColor(UIColor.black, for: UIControlState.normal)
+                ReviewButton1.isEnabled = true
+                ReviewButton2.isEnabled = true
+                ReviewButton3.isEnabled = true
+                ReviewButton4.isEnabled = true
+                ReviewNextButton.isEnabled = false
             }
             ReviewQuestions.remove(at: ReviewQNumber)
             let current = 22 - ReviewQuestions.count
@@ -84,9 +90,14 @@ class ReviewQuestionViewController: UIViewController {
     @IBAction func ReviewBtn1(_ sender: Any) {
         
         if ReviewCorrectAnswerNumbers == 0 {
-            ReviewButton1.backgroundColor = UIColor.green
+            self.ReviewButton1.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
+            
+            ReviewButton2.isEnabled = false
+            ReviewButton3.isEnabled = false
+            ReviewButton4.isEnabled = false
+            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton1.backgroundColor = UIColor.red
@@ -98,6 +109,11 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton2.backgroundColor = UIColor.green
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
+            
+            ReviewButton1.isEnabled = false
+            ReviewButton3.isEnabled = false
+            ReviewButton4.isEnabled = false
+            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton2.backgroundColor = UIColor.red
@@ -109,6 +125,11 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton3.backgroundColor = UIColor.green
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
+            
+            ReviewButton1.isEnabled = false
+            ReviewButton2.isEnabled = false
+            ReviewButton4.isEnabled = false
+            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton3.backgroundColor = UIColor.red
@@ -120,6 +141,11 @@ class ReviewQuestionViewController: UIViewController {
             ReviewButton4.backgroundColor = UIColor.green
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
+            
+            ReviewButton1.isEnabled = false
+            ReviewButton2.isEnabled = false
+            ReviewButton3.isEnabled = false
+            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton4.backgroundColor = UIColor.red

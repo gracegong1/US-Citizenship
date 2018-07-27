@@ -18,6 +18,9 @@ class ReviewResultsViewController: UIViewController {
     
     var ReviewNumCorrect = Int()
     override func viewDidLoad() {
+        reviewPercentCorrectLabel.text = String(Float(Double(ReviewNumCorrect) / 20.0 * 100)) + "%"
+        reviewPercentCorrectProgressView.progress = Float(Double(ReviewNumCorrect) / 20.0)
         reviewNumCorrectLabel.text = "You answered " + String(ReviewNumCorrect) + " out of 20 correct"
+        
     }
 }

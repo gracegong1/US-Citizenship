@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8402E8422108F59400DFCE8E /* QuestionUSGov.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402E8412108F59400DFCE8E /* QuestionUSGov.swift */; };
 		8402E8442108F5F500DFCE8E /* QuestionDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402E8432108F5F500DFCE8E /* QuestionDefault.swift */; };
+		8402E846210A7C9700DFCE8E /* QuestionUSHist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402E845210A7C9600DFCE8E /* QuestionUSHist.swift */; };
 		8420BA232106E4C900E4E4E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA222106E4C900E4E4E0 /* AppDelegate.swift */; };
 		8420BA252106E4C900E4E4E0 /* HomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA242106E4C900E4E4E0 /* HomescreenViewController.swift */; };
 		8420BA282106E4C900E4E4E0 /* Homescreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8420BA262106E4C900E4E4E0 /* Homescreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		8402E8412108F59400DFCE8E /* QuestionUSGov.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionUSGov.swift; sourceTree = "<group>"; };
 		8402E8432108F5F500DFCE8E /* QuestionDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDefault.swift; sourceTree = "<group>"; };
+		8402E845210A7C9600DFCE8E /* QuestionUSHist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionUSHist.swift; sourceTree = "<group>"; };
 		8420BA1F2106E4C900E4E4E0 /* US Citizenship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "US Citizenship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8420BA222106E4C900E4E4E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8420BA242106E4C900E4E4E0 /* HomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				8402E8432108F5F500DFCE8E /* QuestionDefault.swift */,
 				8402E8412108F59400DFCE8E /* QuestionUSGov.swift */,
+				8402E845210A7C9600DFCE8E /* QuestionUSHist.swift */,
 			);
 			path = Hardcode;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				8420BA252106E4C900E4E4E0 /* HomescreenViewController.swift in Sources */,
 				8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */,
 				8420BA4A2106E75B00E4E4E0 /* TestIntroViewController.swift in Sources */,
+				8402E846210A7C9700DFCE8E /* QuestionUSHist.swift in Sources */,
 				8420BA442106E6F700E4E4E0 /* ReviewIntroViewController.swift in Sources */,
 				8420BA2B2106E4C900E4E4E0 /* US_Citizenship.xcdatamodeld in Sources */,
 				8420BA232106E4C900E4E4E0 /* AppDelegate.swift in Sources */,
