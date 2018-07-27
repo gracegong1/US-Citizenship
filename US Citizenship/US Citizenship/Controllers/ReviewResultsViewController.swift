@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-class ReviewResultsViewController: UIViewController {
+class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var answeredQTableView: UIView!
+    
     @IBOutlet weak var reviewPercentCorrectLabel: UILabel!
     
     @IBOutlet weak var reviewPercentCorrectProgressView: UIProgressView!
@@ -23,4 +26,21 @@ class ReviewResultsViewController: UIViewController {
         reviewNumCorrectLabel.text = "You answered " + String(ReviewNumCorrect) + " out of 20 correct"
         
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListAnsweredQTableViewCell", for: indexPath) as! ListAnsweredQTableViewCell
+        
+        cell.answeredQLabel.text = "answered question"
+        cell.answerPickedLabel.text = "your answer choice"
+        cell.correctAnswerLabel.text = "correct answer choice"
+        
+        return cell
+    }
+
+    
 }

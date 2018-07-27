@@ -109,6 +109,7 @@
 				8420BA372106E52100E4E4E0 /* Storyboards */,
 				8402E8402108F53C00DFCE8E /* Hardcode */,
 				8420BA382106E54C00E4E4E0 /* Controllers */,
+				8466FE64210B882A00120D0B /* Helpers */,
 				8420BA312106E4CC00E4E4E0 /* Info.plist */,
 				8420BA292106E4C900E4E4E0 /* US_Citizenship.xcdatamodeld */,
 			);
@@ -146,6 +147,13 @@
 				8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8466FE64210B882A00120D0B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

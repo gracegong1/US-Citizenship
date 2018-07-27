@@ -93,64 +93,71 @@ class ReviewQuestionViewController: UIViewController {
             self.ReviewButton1.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
-            
-            ReviewButton2.isEnabled = false
-            ReviewButton3.isEnabled = false
-            ReviewButton4.isEnabled = false
-            ReviewNextButton.isEnabled = true
+    
         } else {
             NSLog("Wrong!")
-            ReviewButton1.backgroundColor = UIColor.red
-            ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
+            self.ReviewButton1.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);         ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
+        
         }
+        ReviewButton2.isEnabled = false
+        ReviewButton3.isEnabled = false
+        ReviewButton4.isEnabled = false
+        ReviewNextButton.isEnabled = true
     }
+    
+    
     @IBAction func ReviewBtn2(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 1 {
             ReviewButton2.backgroundColor = UIColor.green
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
-            
-            ReviewButton1.isEnabled = false
-            ReviewButton3.isEnabled = false
-            ReviewButton4.isEnabled = false
-            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton2.backgroundColor = UIColor.red
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
+        ReviewButton1.isEnabled = false
+        ReviewButton3.isEnabled = false
+        ReviewButton4.isEnabled = false
+        ReviewNextButton.isEnabled = true
     }
+    
+    
     @IBAction func ReviewBtn3(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 2 {
             ReviewButton3.backgroundColor = UIColor.green
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
-            
-            ReviewButton1.isEnabled = false
-            ReviewButton2.isEnabled = false
-            ReviewButton4.isEnabled = false
-            ReviewNextButton.isEnabled = true
+
         } else {
             NSLog("Wrong!")
             ReviewButton3.backgroundColor = UIColor.red
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
+        
+        
+        ReviewButton1.isEnabled = false
+        ReviewButton2.isEnabled = false
+        ReviewButton4.isEnabled = false
+        ReviewNextButton.isEnabled = true
     }
+    
+    
     @IBAction func ReviewBtn4(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 3 {
             ReviewButton4.backgroundColor = UIColor.green
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
-            
-            ReviewButton1.isEnabled = false
-            ReviewButton2.isEnabled = false
-            ReviewButton3.isEnabled = false
-            ReviewNextButton.isEnabled = true
         } else {
             NSLog("Wrong!")
             ReviewButton4.backgroundColor = UIColor.red
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
+        
+        ReviewButton1.isEnabled = false
+        ReviewButton2.isEnabled = false
+        ReviewButton3.isEnabled = false
+        ReviewNextButton.isEnabled = true
     }
     @IBAction func ReviewNextBtn(_ sender: Any) {
         if ReviewQuestions.count < 3 {
