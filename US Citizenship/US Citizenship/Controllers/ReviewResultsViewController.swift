@@ -11,7 +11,8 @@ import UIKit
 
 class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var answeredQTableView: UIView!
+    @IBOutlet weak var answeredQTableView: UITableView!
+    
     
     @IBOutlet weak var reviewPercentCorrectLabel: UILabel!
     

@@ -32,6 +32,7 @@
 		8420BA542106E7F600E4E4E0 /* StatsPrevTestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA532106E7F600E4E4E0 /* StatsPrevTestsViewController.swift */; };
 		8420BA562106E80400E4E4E0 /* PrevTestQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA552106E80400E4E4E0 /* PrevTestQuestionViewController.swift */; };
 		8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */; };
+		843E3FE6210B8D5800351288 /* ListAnsweredQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		8420BA532106E7F600E4E4E0 /* StatsPrevTestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPrevTestsViewController.swift; sourceTree = "<group>"; };
 		8420BA552106E80400E4E4E0 /* PrevTestQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevTestQuestionViewController.swift; sourceTree = "<group>"; };
 		8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsQuestionBreakdownViewController.swift; sourceTree = "<group>"; };
+		843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAnsweredQTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		8466FE64210B882A00120D0B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				8402E846210A7C9700DFCE8E /* QuestionUSHist.swift in Sources */,
 				8420BA442106E6F700E4E4E0 /* ReviewIntroViewController.swift in Sources */,
 				8420BA2B2106E4C900E4E4E0 /* US_Citizenship.xcdatamodeld in Sources */,
+				843E3FE6210B8D5800351288 /* ListAnsweredQTableViewCell.swift in Sources */,
 				8420BA232106E4C900E4E4E0 /* AppDelegate.swift in Sources */,
 				8420BA522106E7C900E4E4E0 /* StatsMainViewController.swift in Sources */,
 				8402E8422108F59400DFCE8E /* QuestionUSGov.swift in Sources */,

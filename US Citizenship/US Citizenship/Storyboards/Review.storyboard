@@ -354,9 +354,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="answerPickedLabel" destination="4FO-XE-77w" id="HRs-qj-dP6"/>
-                                            <outlet property="answeredQLabel" destination="fq3-aD-jel" id="XMk-Yi-Rqd"/>
-                                            <outlet property="correctAnswerLabel" destination="MVz-Ks-Im4" id="PeV-xb-Z1Q"/>
+                                            <outlet property="answerPickedLabel" destination="4FO-XE-77w" id="H85-Lo-B59"/>
+                                            <outlet property="answeredQLabel" destination="fq3-aD-jel" id="p9s-81-fUx"/>
+                                            <outlet property="correctAnswerLabel" destination="MVz-Ks-Im4" id="H0m-WT-iGf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -383,6 +383,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="answeredQTableView" destination="bOV-Na-29D" id="lBc-iC-QC2"/>
                         <outlet property="reviewNumCorrectLabel" destination="sRF-RO-JHL" id="s26-xX-muN"/>
                         <outlet property="reviewPercentCorrectLabel" destination="ST9-dI-jDR" id="Trt-U1-Q49"/>
                         <outlet property="reviewPercentCorrectProgressView" destination="WXx-0Z-csm" id="M5f-eX-enl"/>
