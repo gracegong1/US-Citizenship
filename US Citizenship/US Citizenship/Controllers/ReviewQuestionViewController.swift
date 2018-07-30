@@ -26,8 +26,12 @@ class ReviewQuestionViewController: UIViewController {
     var ReviewQuestions = [ReviewQuestion]()
     let questionsObject = USGov()
     var ReviewQNumber = Int()
-    var ReviewCorrectAnswerNumbers = Int()
+    var ReviewCorrectAnswerNumbers = [String]()
+    var ReviewWrongAnswerNumbers = [String]()
     var ReviewNumCorrect = Int()
+    var choiceOfWrong = Int()
+    var choiceOfCorrect = Int()
+    var correctAnswerButtonIndex = Int()
    
     
     override func viewDidLoad() {
@@ -62,16 +66,38 @@ class ReviewQuestionViewController: UIViewController {
             
             ReviewCorrectAnswerNumbers = ReviewQuestions[ReviewQNumber].ReviewCorrectAnswers
             
+            ReviewWrongAnswerNumbers = ReviewQuestions[ReviewQNumber].ReviewWrongAnswers
+            
+//            ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewPossibleAnswers[i], for: UIControlState.normal)
+//            var cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+//
+//            var randomCard = Int(arc4random_uniform(UInt32(cards.count)))
+            correctAnswerButtonIndex = Int(arc4random_uniform(UInt32(ReviewButtons.count)))
+            choiceOfCorrect = Int(arc4random_uniform(UInt32(ReviewCorrectAnswerNumbers.count)))
+            choiceOfWrong = Int(arc4random_uniform(UInt32(ReviewWrongAnswerNumbers.count)))
+            
+         ReviewButtons[correctAnswerButtonIndex].setTitle(ReviewQuestions[ReviewQNumber].ReviewCorrectAnswers[choiceOfCorrect], for: UIControlState.normal)
+        
+//            let array = [String]()
+//            array.remove(at: <#T##Int#>)
+            
             for i in 0..<ReviewButtons.count {
-                ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewPossibleAnswers[i], for: UIControlState.normal)
+                
+                
+                
+                if i != correctAnswerButtonIndex {
+                    ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewWrongAnswers[choiceOfWrong], for: UIControlState.normal)
+                    
+                    ReviewWrongAnswerNumbers.remove(at: choiceOfWrong)
+                }
+                
                 ReviewButtons[i].backgroundColor = UIColor.white
                 ReviewButtons[i].setTitleColor(UIColor.black, for: UIControlState.normal)
-                ReviewButton1.isEnabled = true
-                ReviewButton2.isEnabled = true
-                ReviewButton3.isEnabled = true
-                ReviewButton4.isEnabled = true
+                ReviewButtons[i].isEnabled = true
                 ReviewNextButton.isEnabled = false
+                
             }
+            
             ReviewQuestions.remove(at: ReviewQNumber)
             let current = 32 - ReviewQuestions.count
             let max = 20
@@ -89,13 +115,13 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBAction func ReviewBtn1(_ sender: Any) {
         
-        if ReviewCorrectAnswerNumbers == 0 {
+        if ReviewCorrectAnswerNumbers.contains("\(ReviewButton1.title)") {
             self.ReviewButton1.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
     
         } else {
-            NSLog("Wrong!")
+    
             self.ReviewButton1.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
         
@@ -105,15 +131,14 @@ class ReviewQuestionViewController: UIViewController {
         ReviewButton4.isEnabled = false
         ReviewNextButton.isEnabled = true
     }
-    
+
     
     @IBAction func ReviewBtn2(_ sender: Any) {
-        if ReviewCorrectAnswerNumbers == 1 {
+        if ReviewCorrectAnswerNumbers.contains("\(ReviewButton2.title)") {
             self.ReviewButton2.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
         } else {
-            NSLog("Wrong!")
             self.ReviewButton2.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
@@ -125,13 +150,12 @@ class ReviewQuestionViewController: UIViewController {
     
     
     @IBAction func ReviewBtn3(_ sender: Any) {
-        if ReviewCorrectAnswerNumbers == 2 {
+        if ReviewCorrectAnswerNumbers.contains("\(ReviewButton3.title)") {
             self.ReviewButton3.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
 
         } else {
-            NSLog("Wrong!")
            self.ReviewButton3.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
@@ -145,12 +169,12 @@ class ReviewQuestionViewController: UIViewController {
     
     
     @IBAction func ReviewBtn4(_ sender: Any) {
-        if ReviewCorrectAnswerNumbers == 3 {
+        if ReviewCorrectAnswerNumbers.contains("\(ReviewButton4.title)") {
             self.ReviewButton4.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
         } else {
-            NSLog("Wrong!")
+
             self.ReviewButton4.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         }

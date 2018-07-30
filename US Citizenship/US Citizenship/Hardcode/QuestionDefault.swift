@@ -10,6 +10,6 @@ import Foundation
 
 struct ReviewQuestion {
     var ReviewQuestion : String!
-    var ReviewPossibleAnswers : [String]!
-    var ReviewCorrectAnswers : Int!
+    var ReviewWrongAnswers : [String]!
+    var ReviewCorrectAnswers : [String]!
 }
