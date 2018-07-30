@@ -13,7 +13,6 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var answeredQTableView: UITableView!
     
-    
     @IBOutlet weak var reviewPercentCorrectLabel: UILabel!
     
     @IBOutlet weak var reviewPercentCorrectProgressView: UIProgressView!
@@ -28,13 +27,18 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListAnsweredQTableViewCell", for: indexPath) as! ListAnsweredQTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listAnsweredQTableViewCell", for: indexPath) as! ListAnsweredQTableViewCell
         
         cell.answeredQLabel.text = "answered question"
         cell.answerPickedLabel.text = "your answer choice"

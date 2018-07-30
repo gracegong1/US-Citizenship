@@ -73,7 +73,7 @@ class ReviewQuestionViewController: UIViewController {
                 ReviewNextButton.isEnabled = false
             }
             ReviewQuestions.remove(at: ReviewQNumber)
-            let current = 22 - ReviewQuestions.count
+            let current = 32 - ReviewQuestions.count
             let max = 20
             
             if current <= max {
@@ -81,7 +81,7 @@ class ReviewQuestionViewController: UIViewController {
                 QuestionsProgressView.progress = Float(ratio)
                 QuestionNumOfNumLabel.text = "Question \(current) of 20"
             }
-        } else if ReviewQuestions.count < 3 {
+        } else {
             NSLog("Done!")
         }
        
@@ -96,7 +96,8 @@ class ReviewQuestionViewController: UIViewController {
     
         } else {
             NSLog("Wrong!")
-            self.ReviewButton1.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);         ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
+            self.ReviewButton1.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
+            ReviewButton1.setTitleColor(UIColor.white, for: UIControlState.normal)
         
         }
         ReviewButton2.isEnabled = false
@@ -108,12 +109,12 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBAction func ReviewBtn2(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 1 {
-            ReviewButton2.backgroundColor = UIColor.green
+            self.ReviewButton2.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
         } else {
             NSLog("Wrong!")
-            ReviewButton2.backgroundColor = UIColor.red
+            self.ReviewButton2.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton2.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
         ReviewButton1.isEnabled = false
@@ -125,13 +126,13 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBAction func ReviewBtn3(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 2 {
-            ReviewButton3.backgroundColor = UIColor.green
+            self.ReviewButton3.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
 
         } else {
             NSLog("Wrong!")
-            ReviewButton3.backgroundColor = UIColor.red
+           self.ReviewButton3.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton3.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
         
@@ -145,12 +146,12 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBAction func ReviewBtn4(_ sender: Any) {
         if ReviewCorrectAnswerNumbers == 3 {
-            ReviewButton4.backgroundColor = UIColor.green
+            self.ReviewButton4.backgroundColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
             ReviewNumCorrect += 1
         } else {
             NSLog("Wrong!")
-            ReviewButton4.backgroundColor = UIColor.red
+            self.ReviewButton4.backgroundColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0);
             ReviewButton4.setTitleColor(UIColor.white, for: UIControlState.normal)
         }
         
@@ -160,7 +161,7 @@ class ReviewQuestionViewController: UIViewController {
         ReviewNextButton.isEnabled = true
     }
     @IBAction func ReviewNextBtn(_ sender: Any) {
-        if ReviewQuestions.count < 3 {
+        if ReviewQuestions.count < 13 {
             self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
         } else {
             PickReviewQuestion()
