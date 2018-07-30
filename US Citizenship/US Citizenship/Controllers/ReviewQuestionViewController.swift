@@ -88,7 +88,7 @@ class ReviewQuestionViewController: UIViewController {
                 if i != correctAnswerButtonIndex {
                     ReviewButtons[i].setTitle(ReviewQuestions[ReviewQNumber].ReviewWrongAnswers[choiceOfWrong], for: UIControlState.normal)
                     
-                    ReviewWrongAnswerNumbers.remove(at: choiceOfWrong)
+                    
                 }
                 
                 ReviewButtons[i].backgroundColor = UIColor.white
@@ -96,6 +96,8 @@ class ReviewQuestionViewController: UIViewController {
                 ReviewButtons[i].isEnabled = true
                 ReviewNextButton.isEnabled = false
                 
+                
+               ReviewWrongAnswerNumbers.remove(at: choiceOfWrong)
             }
             
             ReviewQuestions.remove(at: ReviewQNumber)

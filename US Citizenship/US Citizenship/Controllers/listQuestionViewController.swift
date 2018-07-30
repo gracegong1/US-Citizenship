@@ -17,6 +17,7 @@ class ListQuestionTableViewController: UITableViewController {
         
     }
     
+    let questionsListed = USGov()
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 1
