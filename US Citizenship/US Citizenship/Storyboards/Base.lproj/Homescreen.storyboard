@@ -50,6 +50,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbE-yK-MH8">
                                                 <rect key="frame" x="0.0" y="110.5" width="303" height="70.5"/>
                                                 <state key="normal" title="Practice Test"/>
+                                                <connections>
+                                                    <segue destination="FXv-zR-vuD" kind="show" id="9MR-ND-zdO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0a-0v-yLx">
                                                 <rect key="frame" x="0.0" y="221" width="303" height="70.5"/>
@@ -105,6 +108,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1079.2" y="133.5832083958021"/>
+        </scene>
+        <!--Test-->
+        <scene sceneID="R4L-q0-WuZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Test" id="FXv-zR-vuD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sc-Zz-UQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="604"/>
         </scene>
         <!--List-->
         <scene sceneID="gyi-Dy-kFR">
