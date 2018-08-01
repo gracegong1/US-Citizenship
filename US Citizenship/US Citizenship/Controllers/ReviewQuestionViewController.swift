@@ -113,7 +113,6 @@ class ReviewQuestionViewController: UIViewController {
     
     @IBAction func ReviewBtn1(_ sender: Any) {
      guard let chosenAnswer = ReviewButton1.title(for: .normal) else {
-            print("I am escaping!")
         return
         }
         if ReviewCorrectAnswer.contains(chosenAnswer) {

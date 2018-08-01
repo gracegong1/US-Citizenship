@@ -102,6 +102,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUC-pM-kbR">
                                 <rect key="frame" x="15" y="79" width="345" height="140"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-va-ztS">
+                                        <rect key="frame" x="80" y="8" width="185" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Eow-G9-FAq">
                                         <rect key="frame" x="56" y="57" width="233" height="2"/>
                                         <constraints>
@@ -113,12 +119,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="63" id="uFJ-DA-qh0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1 of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgo-va-ztS">
-                                        <rect key="frame" x="80" y="8" width="185" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -147,7 +147,10 @@
                                         <rect key="frame" x="90" y="34" width="165" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes"/>
+                                        <connections>
+                                            <action selector="answerEdited:" destination="9T1-SS-3tQ" eventType="valueChanged" id="fdQ-lg-6LF"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSE-iJ-qdC">
                                         <rect key="frame" x="40" y="94" width="265" height="50"/>
@@ -156,7 +159,17 @@
                                             <constraint firstAttribute="height" constant="50" id="WaS-Ve-Joa"/>
                                         </constraints>
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="TestNextBtn:" destination="9T1-SS-3tQ" eventType="touchUpInside" id="lvE-bI-nLT"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PL8-dz-hGf">
+                                        <rect key="frame" x="295" y="30" width="42" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -182,6 +195,12 @@
                         <viewLayoutGuide key="safeArea" id="EEK-HL-BnF"/>
                     </view>
                     <connections>
+                        <outlet property="TestAnswerTextField" destination="fbh-FX-RDy" id="Uag-1f-KyA"/>
+                        <outlet property="TestNextButton" destination="OSE-iJ-qdC" id="EAm-wp-bVS"/>
+                        <outlet property="TestQLabel" destination="adS-Rz-gec" id="1Bs-8h-fcD"/>
+                        <outlet property="TestQuestionNumOfNumLabel" destination="qgo-va-ztS" id="Iop-K7-qrN"/>
+                        <outlet property="TestQuestionsProgressView" destination="Eow-G9-FAq" id="98b-5E-itk"/>
+                        <outlet property="checkmarkLabel" destination="PL8-dz-hGf" id="xLZ-KF-c7v"/>
                         <segue destination="3O5-tr-wjN" kind="show" identifier="displayTestResults" id="qFo-ww-tCe"/>
                     </connections>
                 </viewController>
