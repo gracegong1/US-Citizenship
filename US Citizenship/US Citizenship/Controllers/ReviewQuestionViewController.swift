@@ -23,7 +23,7 @@ class ReviewQuestionViewController: UIViewController {
     @IBOutlet weak var ReviewButton4: UIButton!
     @IBOutlet weak var ReviewNextButton: UIButton!
     
-    var ReviewQuestions = [ReviewQuestion]()
+    var ReviewQuestions = [Question]()
     let questionsObject = USGov()
     var ReviewQNumber = Int()
     var ReviewCorrectAnswer = [String]()
@@ -62,11 +62,11 @@ class ReviewQuestionViewController: UIViewController {
         if ReviewQuestions.count > 0 {
             // gets a question
             ReviewQNumber = Int(arc4random_uniform(UInt32(ReviewQuestions.count)))
-            ReviewQLabel.text = ReviewQuestions[ReviewQNumber].ReviewQuestion
+            ReviewQLabel.text = ReviewQuestions[ReviewQNumber].Question
             
             // gets the correct and incorrect answers
-            ReviewCorrectAnswer = ReviewQuestions[ReviewQNumber].ReviewCorrectAnswers
-            ReviewWrongAnswer = ReviewQuestions[ReviewQNumber].ReviewWrongAnswers
+            ReviewCorrectAnswer = ReviewQuestions[ReviewQNumber].CorrectAnswers
+            ReviewWrongAnswer = ReviewQuestions[ReviewQNumber].WrongAnswers
             
             // chooses which number button will be correct
             correctAnswerButtonIndex = Int(arc4random_uniform(UInt32(ReviewButtons.count)))
@@ -91,7 +91,7 @@ class ReviewQuestionViewController: UIViewController {
             }
             
             ReviewQuestions.remove(at: ReviewQNumber)
-            let current = 32 - ReviewQuestions.count
+            let current = 100 - ReviewQuestions.count
             let max = 20
             
             if current <= max {
@@ -203,7 +203,7 @@ class ReviewQuestionViewController: UIViewController {
     }
     
     @IBAction func ReviewNextBtn(_ sender: Any) {
-        if ReviewQuestions.count < 13 {
+        if ReviewQuestions.count <= 80 {
             self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
         } else {
             PickReviewQuestion()

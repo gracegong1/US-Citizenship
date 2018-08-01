@@ -11,5 +11,30 @@ import UIKit
 
 class TestQuestionViewController: UIViewController {
     
+    
+    
+    
+    
+    
+    var testQuestions = [Question]()
+    let questionsObject = USGov()
+    var testQNumber = Int()
+    var testCorrectAnswer = [String]()
+    var testWrongAnswer = [String]()
+    var wrongAnswerChoice = Int()
+    var correctAnswerChoice = Int()
+    var correctAnswerButtonIndex = Int()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        testQuestions = questionsObject.ReviewQList
+    }
+    
+    //insert override func prepare for segue to test results
+    
+    func PickTestQuestion() {
+        
+    }
 }
 

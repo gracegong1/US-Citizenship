@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ReviewQuestion {
-    var ReviewQuestion : String!
-    var ReviewWrongAnswers : [String]!
-    var ReviewCorrectAnswers : [String]!
+struct Question {
+    var Question : String!
+    var WrongAnswers : [String]!
+    var CorrectAnswers : [String]!
 }

@@ -10,10 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Homescreen-->
+        <scene sceneID="VWn-oo-Ix4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Homescreen" id="qaB-wi-cK2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUI-1i-tYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="-66"/>
+        </scene>
         <!--Practice Test-->
         <scene sceneID="Gt1-mr-c0X">
             <objects>
-                <viewController id="O0Q-0o-qiH" sceneMemberID="viewController">
+                <viewController id="O0Q-0o-qiH" customClass="TestIntroViewController" customModule="US_Citizenship" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqv-4u-QOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +77,11 @@
                         <viewLayoutGuide key="safeArea" id="l94-2Q-qqc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Practice Test" id="1WC-2C-Xfv">
-                        <barButtonItem key="leftBarButtonItem" title="Home" id="gaV-pt-jFw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="gaV-pt-jFw">
+                            <connections>
+                                <segue destination="qaB-wi-cK2" kind="show" identifier="practiceTestToHome" id="V52-dE-rLt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="9T1-SS-3tQ" kind="show" identifier="displayTestQuestion" id="E6r-oV-6q5"/>
@@ -79,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="296.80000000000001" y="357.57121439280365"/>
         </scene>
-        <!--View Controller-->
+        <!--Test Question View Controller-->
         <scene sceneID="MzM-fw-eDg">
             <objects>
-                <viewController id="9T1-SS-3tQ" sceneMemberID="viewController">
+                <viewController id="9T1-SS-3tQ" customClass="TestQuestionViewController" customModule="US_Citizenship" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kg9-uc-dDO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,9 +156,6 @@
                                             <constraint firstAttribute="height" constant="50" id="WaS-Ve-Joa"/>
                                         </constraints>
                                         <state key="normal" title="Submit"/>
-                                        <connections>
-                                            <segue destination="3O5-tr-wjN" kind="show" identifier="nextDisplayTestResults" id="VzA-41-dVf"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,16 +189,36 @@
             </objects>
             <point key="canvasLocation" x="1108" y="357.57121439280365"/>
         </scene>
-        <!--View Controller-->
+        <!--Test Results View Controller-->
         <scene sceneID="55S-jZ-MNs">
             <objects>
-                <viewController id="3O5-tr-wjN" sceneMemberID="viewController">
+                <viewController id="3O5-tr-wjN" customClass="TestResultsViewController" customModule="US_Citizenship" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8V-Xs-7nh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NSZ-2Q-GkM">
                                 <rect key="frame" x="16" y="79" width="343" height="113"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="csn-CF-zYc">
+                                        <rect key="frame" x="96" y="55" width="150" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You answered 10/10 questions correctly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="326-k0-fA4">
+                                        <rect key="frame" x="19" y="79" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRo-iO-5FE">
+                                        <rect key="frame" x="154" y="14" width="35" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="Clk-cb-sOc"/>
@@ -197,22 +226,78 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kaf-Xa-8f0">
                                 <rect key="frame" x="16" y="207" width="343" height="112"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bRk-Zl-fyN">
+                                        <rect key="frame" x="15" y="11" width="313" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzm-0e-WId">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="42.5"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Retry Practice Test"/>
+                                                <connections>
+                                                    <segue destination="afT-ox-YQV" kind="show" identifier="retryTest" id="skV-Es-TUO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhv-yD-icP">
+                                                <rect key="frame" x="0.0" y="47.5" width="313" height="42.5"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Home"/>
+                                                <connections>
+                                                    <segue destination="D2g-M9-77Y" kind="show" id="f26-pp-x6R"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="yhv-yD-icP" firstAttribute="height" secondItem="tzm-0e-WId" secondAttribute="height" id="Y3f-hK-ugG"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="6sh-b6-dfL"/>
+                                    <constraint firstItem="bRk-Zl-fyN" firstAttribute="leading" secondItem="Kaf-Xa-8f0" secondAttribute="leading" constant="15" id="Olh-ew-Uv1"/>
+                                    <constraint firstAttribute="trailing" secondItem="bRk-Zl-fyN" secondAttribute="trailing" constant="15" id="P93-hj-Y26"/>
+                                    <constraint firstItem="bRk-Zl-fyN" firstAttribute="top" secondItem="Kaf-Xa-8f0" secondAttribute="top" constant="11" id="djC-kA-GMF"/>
+                                    <constraint firstAttribute="bottom" secondItem="bRk-Zl-fyN" secondAttribute="bottom" constant="11" id="wR9-33-WxJ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-SN-Bmy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sJ5-SN-Bmy">
                                 <rect key="frame" x="16" y="341" width="343" height="326"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cjd-Wr-bm2">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Cjd-Wr-bm2">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cjd-Wr-bm2" id="hJM-P6-3m8">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rbz-4P-ZEe">
+                                                    <rect key="frame" x="34" y="11" width="114.5" height="71.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4O3-cx-ETk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="your answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrH-5S-u73">
+                                                            <rect key="frame" x="0.0" y="25.5" width="93" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="correct answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBc-WR-Cbd">
+                                                            <rect key="frame" x="0.0" y="51" width="114.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -234,6 +319,22 @@
             </objects>
             <point key="canvasLocation" x="1853.5999999999999" y="357.57121439280365"/>
         </scene>
+        <!--Test-->
+        <scene sceneID="Cvg-pF-CCT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Test" id="afT-ox-YQV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbf-6U-PBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2525" y="216"/>
+        </scene>
+        <!--Homescreen-->
+        <scene sceneID="7Bq-bp-GGM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Homescreen" id="D2g-M9-77Y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UP4-n8-Vpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522" y="314"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="eaR-zl-1C4">
             <objects>
@@ -252,7 +353,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qFo-ww-tCe"/>
         <segue reference="E6r-oV-6q5"/>
     </inferredMetricsTieBreakers>
 </document>
