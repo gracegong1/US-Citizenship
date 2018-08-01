@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,8 +49,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kq2-7m-iaG">
                                 <rect key="frame" x="20" y="572" width="335" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJD-H3-8ig">
-                                        <rect key="frame" x="0.0" y="0.0" width="336" height="80"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJD-H3-8ig">
+                                        <rect key="frame" x="152" y="25" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <segue destination="LzO-hA-pdx" kind="show" identifier="displayReviewQuestion" id="K4s-l7-XgP"/>
@@ -330,31 +331,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-Eo-hlk">
-                                                    <rect key="frame" x="15" y="11" width="114.5" height="71.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rbj-Eo-hlk">
+                                                    <rect key="frame" x="30" y="11" width="283" height="78"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq3-aD-jel">
-                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq3-aD-jel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="22.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="your answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FO-XE-77w">
-                                                            <rect key="frame" x="0.0" y="25.5" width="93" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FO-XE-77w">
+                                                            <rect key="frame" x="0.0" y="27.5" width="283" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="correct answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-Ks-Im4">
-                                                            <rect key="frame" x="0.0" y="51" width="114.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="correct answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-Ks-Im4">
+                                                            <rect key="frame" x="0.0" y="55.5" width="283" height="22.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="fq3-aD-jel" firstAttribute="leading" secondItem="Rbj-Eo-hlk" secondAttribute="leading" id="1ME-IA-FnL"/>
+                                                        <constraint firstItem="4FO-XE-77w" firstAttribute="height" secondItem="fq3-aD-jel" secondAttribute="height" id="23b-sg-fEq"/>
+                                                        <constraint firstItem="MVz-Ks-Im4" firstAttribute="height" secondItem="fq3-aD-jel" secondAttribute="height" id="8Q9-iF-YQF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fq3-aD-jel" secondAttribute="trailing" id="KH4-qp-HhH"/>
+                                                        <constraint firstItem="fq3-aD-jel" firstAttribute="top" secondItem="Rbj-Eo-hlk" secondAttribute="top" id="Nbe-jh-hB8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="MVz-Ks-Im4" secondAttribute="trailing" id="Ogg-g8-I13"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MVz-Ks-Im4" secondAttribute="bottom" id="aYg-Zg-DPH"/>
+                                                        <constraint firstItem="4FO-XE-77w" firstAttribute="leading" secondItem="Rbj-Eo-hlk" secondAttribute="leading" id="bAn-bo-xjW"/>
+                                                        <constraint firstItem="MVz-Ks-Im4" firstAttribute="leading" secondItem="Rbj-Eo-hlk" secondAttribute="leading" id="qK0-9w-uS8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4FO-XE-77w" secondAttribute="trailing" id="uIn-t6-OKd"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Rbj-Eo-hlk" firstAttribute="leading" secondItem="LHj-cN-8ah" secondAttribute="leadingMargin" constant="15" id="09N-WK-rJH"/>
+                                                <constraint firstItem="Rbj-Eo-hlk" firstAttribute="top" secondItem="LHj-cN-8ah" secondAttribute="topMargin" id="GWT-Bk-ru4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rbj-Eo-hlk" secondAttribute="bottom" id="Ote-vj-08g"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rbj-Eo-hlk" secondAttribute="trailing" constant="15" id="mcd-FW-zGC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="answerPickedLabel" destination="4FO-XE-77w" id="H85-Lo-B59"/>
@@ -436,6 +454,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="K4s-l7-XgP"/>
+        <segue reference="nej-sx-2lU"/>
     </inferredMetricsTieBreakers>
 </document>

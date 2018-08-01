@@ -49,30 +49,36 @@ class TestQuestionViewController: UIViewController {
         TestNextButton.isEnabled = false
         checkmarkLabel.textColor = UIColor.white
         TestAnswerTextField.text = ""
-       
-    }
-    
-  
-    @IBAction func answerEdited(_ sender: Any) {
+        TestAnswerTextField.textColor = UIColor.black
+        
+        testQuestions.remove(at: testQNumber)
+        let current = 100 - testQuestions.count
+        let max = 10
+        
+        if current <= max {
+            let ratio = Float(current) / Float(max)
+            TestQuestionsProgressView.progress = Float(ratio)
+            TestQuestionNumOfNumLabel.text = "Question \(current) of 10"
+        }
         
     }
-    
-
     
     
     @IBAction func TestNextBtn(_ sender: Any) {
         guard let typedAnswer = TestAnswerTextField.text else { return }
         if testQuestions.count <= 90 {
             self; performSegue(withIdentifier: "displayTestResults", sender: Any?.self)
-        } else if testCorrectAnswer.contains(typedAnswer){
+        } else if testCorrectAnswer.contains(where: {$0.caseInsensitiveCompare(typedAnswer) == .orderedSame}){
             checkmarkLabel.text = "✓"
-            checkmarkLabel.textColor = UIColor.black
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            checkmarkLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            TestAnswerTextField.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.PickTestQuestion()
             }
         } else {
             checkmarkLabel.text = "X"
-            checkmarkLabel.textColor = UIColor.black
+            checkmarkLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            TestAnswerTextField.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 self.PickTestQuestion()
             }

@@ -99,16 +99,8 @@ class ReviewQuestionViewController: UIViewController {
                 QuestionsProgressView.progress = Float(ratio)
                 QuestionNumOfNumLabel.text = "Question \(current) of 20"
             }
-        } else {
-            NSLog("Done!")
         }
-       
     }
-    
-//    guard let name = nameField.text else {
-//    show("No name to submit")
-//    return
-//    }
     
     
     @IBAction func ReviewBtn1(_ sender: Any) {

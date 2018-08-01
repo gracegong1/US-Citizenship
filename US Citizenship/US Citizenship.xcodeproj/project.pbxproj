@@ -34,6 +34,7 @@
 		8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */; };
 		8431C408210F78070091B463 /* AllQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431C407210F78070091B463 /* AllQTableViewCell.swift */; };
 		843E3FE6210B8D5800351288 /* ListAnsweredQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */; };
+		847481F921127BA200B1D131 /* ListTestQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsQuestionBreakdownViewController.swift; sourceTree = "<group>"; };
 		8431C407210F78070091B463 /* AllQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQTableViewCell.swift; sourceTree = "<group>"; };
 		843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAnsweredQTableViewCell.swift; sourceTree = "<group>"; };
+		847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTestQTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */,
+				847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */,
 				8431C407210F78070091B463 /* AllQTableViewCell.swift */,
 			);
 			path = Helpers;
@@ -243,6 +246,7 @@
 				8420BA462106E71800E4E4E0 /* ReviewQuestionViewController.swift in Sources */,
 				8420BA252106E4C900E4E4E0 /* HomescreenViewController.swift in Sources */,
 				8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */,
+				847481F921127BA200B1D131 /* ListTestQTableViewCell.swift in Sources */,
 				8420BA4A2106E75B00E4E4E0 /* TestIntroViewController.swift in Sources */,
 				8402E846210A7C9700DFCE8E /* QuestionUSHist.swift in Sources */,
 				8420BA442106E6F700E4E4E0 /* ReviewIntroViewController.swift in Sources */,
