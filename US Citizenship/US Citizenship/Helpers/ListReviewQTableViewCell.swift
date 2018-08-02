@@ -13,7 +13,7 @@ class ListReviewQTableViewCell: UITableViewCell {
     
     @IBOutlet weak var answeredQLabel: UILabel!
     
-    @IBOutlet weak var answerPickedLabel: UILabel!
-    
     @IBOutlet weak var correctAnswerLabel: UILabel!
+    
+    @IBOutlet weak var chosenAnswerLabel: UILabel!
 }

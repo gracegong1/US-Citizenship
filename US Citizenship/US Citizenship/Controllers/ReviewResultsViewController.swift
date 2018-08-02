@@ -46,19 +46,19 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
         let correctanswers = results.correctAnswers[indexPath.row]
         
         cell.answeredQLabel.text = questionsAnswered
-        cell.answerPickedLabel.text = chosenAnswers
         cell.correctAnswerLabel.text = correctanswers
+        cell.chosenAnswerLabel.text = chosenAnswers
         
         if results.rightOrWrong[indexPath.row] == false {
             
-            cell.answerPickedLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             cell.correctAnswerLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            cell.chosenAnswerLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             
         } else {
 
             cell.correctAnswerLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-            cell.answerPickedLabel.text = ""
-            cell.answerPickedLabel.textColor = UIColor.white
+            cell.chosenAnswerLabel.text = ""
+            cell.chosenAnswerLabel.textColor = UIColor.white
         }
         return cell
     }

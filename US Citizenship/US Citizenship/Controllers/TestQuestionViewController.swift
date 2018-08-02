@@ -23,6 +23,9 @@ class TestQuestionViewController: UIViewController {
     let questionsObject = USGov()
     var testQNumber = Int()
     var testCorrectAnswer = [String]()
+    var testNumCorrect = Int()
+    
+    var testResults = TestResults()
     
     
     override func viewDidLoad() {
@@ -32,7 +35,18 @@ class TestQuestionViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-    //insert override func prepare for segue to test results
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Create a variable that you want to send
+        
+        // Create a new variable to store the instance of PlayerTableViewController
+        
+        let destinationVC3 = segue.destination as! TestResultsViewController
+        destinationVC3.testResults = testResults
+        
+        let destinationVC4 = segue.destination as! TestResultsViewController
+        destinationVC4.testNumCorrect = testNumCorrect
+    }
     
     func PickTestQuestion() {
         
@@ -60,28 +74,45 @@ class TestQuestionViewController: UIViewController {
             TestQuestionsProgressView.progress = Float(ratio)
             TestQuestionNumOfNumLabel.text = "Question \(current) of 10"
         }
-        
+        testResults.questionsAnswered.append(testQuestions[testQNumber].Question)
     }
     
     
     @IBAction func TestNextBtn(_ sender: Any) {
         guard let typedAnswer = TestAnswerTextField.text else { return }
-        if testQuestions.count <= 90 {
-            self; performSegue(withIdentifier: "displayTestResults", sender: Any?.self)
-        } else if testCorrectAnswer.contains(where: {$0.caseInsensitiveCompare(typedAnswer) == .orderedSame}){
-            checkmarkLabel.text = "✓"
-            checkmarkLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-            TestAnswerTextField.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.PickTestQuestion()
-            }
+          let correctAnswersAsString = testQuestions[testQNumber].CorrectAnswers.joined(separator: ", ")
+        if testQuestions.count > 90 {
+           
+            if testCorrectAnswer.contains(where: {$0.caseInsensitiveCompare(typedAnswer) == .orderedSame}){
+                checkmarkLabel.text = "✓"
+                checkmarkLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+                TestAnswerTextField.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+                
+                testNumCorrect += 1
+                testResults.rightOrWrong.append(true)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.PickTestQuestion()
+                    
+                }
+            } else {
+                    checkmarkLabel.text = "X"
+                    checkmarkLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+                    TestAnswerTextField.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+                
+                    testResults.rightOrWrong.append(false)
+                
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        self.PickTestQuestion()
+                    }
+                }
+        testResults.answersSubmitted.append(typedAnswer)
+        testResults.possibleCorrectAnswers.append(correctAnswersAsString)
         } else {
-            checkmarkLabel.text = "X"
-            checkmarkLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-            TestAnswerTextField.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.PickTestQuestion()
-            }
+          
+            testResults.answersSubmitted.append(typedAnswer)
+            testResults.possibleCorrectAnswers.append(correctAnswersAsString)
+            self; performSegue(withIdentifier: "displayTestResults", sender: Any?.self)
         }
     }
 }
