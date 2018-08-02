@@ -27,6 +27,8 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
+    var results = Results()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -34,13 +36,14 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listAnsweredQTableViewCell", for: indexPath) as! ListAnsweredQTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listAnsweredQTableViewCell", for: indexPath) as! ListReviewQTableViewCell
+        let questionsAnswered = results.questionsAnswered[indexPath.row].joined(separator: ", ")
         
-        cell.answeredQLabel.text = "answered question"
+        cell.answeredQLabel.text = 
         cell.answerPickedLabel.text = "your answer choice"
         cell.correctAnswerLabel.text = "correct answer choice"
         

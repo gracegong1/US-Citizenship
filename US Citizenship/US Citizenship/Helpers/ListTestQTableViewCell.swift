@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+class ListTestQTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var TestQuestionLabel: UILabel!
+    
+    @IBOutlet weak var TestAnswerInputLabel: UILabel!
+    
+    @IBOutlet weak var TestCorrectAnswerLabel: UILabel!
+}

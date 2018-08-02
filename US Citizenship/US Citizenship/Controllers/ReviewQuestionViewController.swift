@@ -33,6 +33,8 @@ class ReviewQuestionViewController: UIViewController {
     var choiceOfCorrect = Int()
     var correctAnswerButtonIndex = Int()
    
+    var results = Results()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,9 @@ class ReviewQuestionViewController: UIViewController {
         // Create a new variable to store the instance of PlayerTableViewController
         let destinationVC = segue.destination as! ReviewResultsViewController
         destinationVC.ReviewNumCorrect = ReviewNumCorrect
+        
+        let destinationVC2 = segue.destination as! ReviewResultsViewController
+        destinationVC2.results = results
     }
 
     func PickReviewQuestion() {
@@ -73,7 +78,8 @@ class ReviewQuestionViewController: UIViewController {
             
             // chooses which correct answer to display
             choiceOfCorrect = Int(arc4random_uniform(UInt32(ReviewCorrectAnswer.count)))
-            
+            results.correctAnswers.append(ReviewCorrectAnswer[choiceOfCorrect])
+        
             // sets the correct answer button with the answer
             ReviewButtons[correctAnswerButtonIndex].setTitle(ReviewCorrectAnswer[choiceOfCorrect], for: UIControlState.normal)
             
@@ -89,6 +95,7 @@ class ReviewQuestionViewController: UIViewController {
                 ReviewButtons[i].isEnabled = true
                 ReviewNextButton.isEnabled = false
             }
+            results.questionsAnswered.append(ReviewQuestions[ReviewQNumber].Question)
             
             ReviewQuestions.remove(at: ReviewQNumber)
             let current = 100 - ReviewQuestions.count
@@ -101,6 +108,8 @@ class ReviewQuestionViewController: UIViewController {
             }
         }
     }
+    
+   
     
     
     @IBAction func ReviewBtn1(_ sender: Any) {
@@ -123,6 +132,8 @@ class ReviewQuestionViewController: UIViewController {
         ReviewButton3.isEnabled = false
         ReviewButton4.isEnabled = false
         ReviewNextButton.isEnabled = true
+        
+        results.chosenAnswers.append(chosenAnswer)
     }
 
     
@@ -144,6 +155,8 @@ class ReviewQuestionViewController: UIViewController {
         ReviewButton3.isEnabled = false
         ReviewButton4.isEnabled = false
         ReviewNextButton.isEnabled = true
+        
+        results.chosenAnswers.append(chosenAnswer)
     }
     
     
@@ -168,6 +181,8 @@ class ReviewQuestionViewController: UIViewController {
         ReviewButton2.isEnabled = false
         ReviewButton4.isEnabled = false
         ReviewNextButton.isEnabled = true
+        
+         results.chosenAnswers.append(chosenAnswer)
     }
     
     
@@ -191,6 +206,8 @@ class ReviewQuestionViewController: UIViewController {
         ReviewButton2.isEnabled = false
         ReviewButton3.isEnabled = false
         ReviewNextButton.isEnabled = true
+        
+         results.chosenAnswers.append(chosenAnswer)
     }
     
     @IBAction func ReviewNextBtn(_ sender: Any) {

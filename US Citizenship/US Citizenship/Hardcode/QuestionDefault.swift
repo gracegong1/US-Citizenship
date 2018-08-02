@@ -9,7 +9,7 @@
 import Foundation
 
 struct Question {
-    var Question : String!
-    var WrongAnswers : [String]!
-    var CorrectAnswers : [String]!
+    var Question : String
+    var WrongAnswers : [String]
+    var CorrectAnswers : [String]
 }

@@ -33,8 +33,9 @@
 		8420BA562106E80400E4E4E0 /* PrevTestQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA552106E80400E4E4E0 /* PrevTestQuestionViewController.swift */; };
 		8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */; };
 		8431C408210F78070091B463 /* AllQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8431C407210F78070091B463 /* AllQTableViewCell.swift */; };
-		843E3FE6210B8D5800351288 /* ListAnsweredQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */; };
-		847481F921127BA200B1D131 /* ListTestQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */; };
+		843E3FE6210B8D5800351288 /* ListReviewQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E3FE5210B8D5800351288 /* ListReviewQTableViewCell.swift */; };
+		847481FB21127D7900B1D131 /* ListTestQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */; };
+		847481FE2112857D00B1D131 /* AnsweredQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481FD2112857D00B1D131 /* AnsweredQuestionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +67,9 @@
 		8420BA552106E80400E4E4E0 /* PrevTestQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevTestQuestionViewController.swift; sourceTree = "<group>"; };
 		8420BA572106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsQuestionBreakdownViewController.swift; sourceTree = "<group>"; };
 		8431C407210F78070091B463 /* AllQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQTableViewCell.swift; sourceTree = "<group>"; };
-		843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAnsweredQTableViewCell.swift; sourceTree = "<group>"; };
-		847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTestQTableViewCell.swift; sourceTree = "<group>"; };
+		843E3FE5210B8D5800351288 /* ListReviewQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListReviewQTableViewCell.swift; sourceTree = "<group>"; };
+		847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTestQTableViewCell.swift; sourceTree = "<group>"; };
+		847481FD2112857D00B1D131 /* AnsweredQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				8420BA222106E4C900E4E4E0 /* AppDelegate.swift */,
 				8420BA2C2106E4CC00E4E4E0 /* Assets.xcassets */,
+				847481FC2112856400B1D131 /* Models */,
 				8420BA372106E52100E4E4E0 /* Storyboards */,
 				8402E8402108F53C00DFCE8E /* Hardcode */,
 				8420BA382106E54C00E4E4E0 /* Controllers */,
@@ -158,11 +161,19 @@
 		8466FE64210B882A00120D0B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				843E3FE5210B8D5800351288 /* ListAnsweredQTableViewCell.swift */,
-				847481F821127BA200B1D131 /* ListTestQTableViewCell.swift */,
+				843E3FE5210B8D5800351288 /* ListReviewQTableViewCell.swift */,
+				847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */,
 				8431C407210F78070091B463 /* AllQTableViewCell.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		847481FC2112856400B1D131 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				847481FD2112857D00B1D131 /* AnsweredQuestionModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,12 +257,13 @@
 				8420BA462106E71800E4E4E0 /* ReviewQuestionViewController.swift in Sources */,
 				8420BA252106E4C900E4E4E0 /* HomescreenViewController.swift in Sources */,
 				8420BA582106E82900E4E4E0 /* StatsQuestionBreakdownViewController.swift in Sources */,
-				847481F921127BA200B1D131 /* ListTestQTableViewCell.swift in Sources */,
+				847481FB21127D7900B1D131 /* ListTestQTableViewCell.swift in Sources */,
 				8420BA4A2106E75B00E4E4E0 /* TestIntroViewController.swift in Sources */,
+				847481FE2112857D00B1D131 /* AnsweredQuestionModel.swift in Sources */,
 				8402E846210A7C9700DFCE8E /* QuestionUSHist.swift in Sources */,
 				8420BA442106E6F700E4E4E0 /* ReviewIntroViewController.swift in Sources */,
 				8420BA2B2106E4C900E4E4E0 /* US_Citizenship.xcdatamodeld in Sources */,
-				843E3FE6210B8D5800351288 /* ListAnsweredQTableViewCell.swift in Sources */,
+				843E3FE6210B8D5800351288 /* ListReviewQTableViewCell.swift in Sources */,
 				8420BA232106E4C900E4E4E0 /* AppDelegate.swift in Sources */,
 				8420BA522106E7C900E4E4E0 /* StatsMainViewController.swift in Sources */,
 				8402E8422108F59400DFCE8E /* QuestionUSGov.swift in Sources */,

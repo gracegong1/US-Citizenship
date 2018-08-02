@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ListAnsweredQTableViewCell: UITableViewCell {
+class ListReviewQTableViewCell: UITableViewCell {
     
     @IBOutlet weak var answeredQLabel: UILabel!
     

@@ -285,7 +285,7 @@
                                 <rect key="frame" x="16" y="335" width="343" height="332"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Cjd-Wr-bm2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Cjd-Wr-bm2" customClass="ListTestQTableViewCell" customModule="US_Citizenship" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cjd-Wr-bm2" id="hJM-P6-3m8">
@@ -332,8 +332,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rbz-4P-ZEe" secondAttribute="trailing" constant="15" id="npv-4H-Bzf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="TestAnswerInputLabel" destination="hrH-5S-u73" id="NjT-77-9Mb"/>
+                                            <outlet property="TestCorrectAnswerLabel" destination="pBc-WR-Cbd" id="8EW-Ib-xe5"/>
+                                            <outlet property="TestQuestionLabel" destination="4O3-cx-ETk" id="inj-cw-PAj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3O5-tr-wjN" id="ZTL-OW-A4z"/>
+                                    <outlet property="delegate" destination="3O5-tr-wjN" id="2jZ-Yw-MvX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

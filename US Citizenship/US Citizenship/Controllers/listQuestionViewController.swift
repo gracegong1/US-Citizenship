@@ -11,7 +11,8 @@ import UIKit
 
 class ListQuestionTableViewController: UITableViewController {
     
-    
+let questionsObject = USGov()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +22,7 @@ class ListQuestionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 1
-        return 10
+        return questionsObject.ReviewQList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -30,8 +31,10 @@ class ListQuestionTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listedQuestionTableViewCell") as!
 ListQuestionTableViewCell
         
-        cell.listAllQuestionLabel.text = "i am the question"
-        cell.listAllAnswerLabel.text = "i am the answer"
+        let correctAnswersAsString = questionsObject.ReviewQList[indexPath.row].CorrectAnswers.joined(separator: ", ")
+        
+        cell.listAllQuestionLabel.text = "\(indexPath.row + 1). " + questionsObject.ReviewQList[indexPath.row].Question
+        cell.listAllAnswerLabel.text = correctAnswersAsString
        
         return cell
     }
