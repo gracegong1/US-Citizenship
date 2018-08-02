@@ -12,10 +12,12 @@ struct Results {
     var questionsAnswered : [String]
     var chosenAnswers : [String]
     var correctAnswers : [String]
+    var rightOrWrong : [Bool]
     
     init () {
         self.questionsAnswered = [String]()
         self.chosenAnswers = [String]()
         self.correctAnswers = [String]()
+        self.rightOrWrong = [Bool]()
     }
 }

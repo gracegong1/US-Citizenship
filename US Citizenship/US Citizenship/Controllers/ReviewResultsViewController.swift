@@ -41,12 +41,25 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listAnsweredQTableViewCell", for: indexPath) as! ListReviewQTableViewCell
-        let questionsAnswered = results.questionsAnswered[indexPath.row].joined(separator: ", ")
+        let questionsAnswered = results.questionsAnswered[indexPath.row]
+        let chosenAnswers = results.chosenAnswers[indexPath.row]
+        let correctanswers = results.correctAnswers[indexPath.row]
         
-        cell.answeredQLabel.text = 
-        cell.answerPickedLabel.text = "your answer choice"
-        cell.correctAnswerLabel.text = "correct answer choice"
+        cell.answeredQLabel.text = questionsAnswered
+        cell.answerPickedLabel.text = chosenAnswers
+        cell.correctAnswerLabel.text = correctanswers
         
+        if results.rightOrWrong[indexPath.row] == false {
+            
+            cell.answerPickedLabel.textColor = UIColor(red: 204.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            cell.correctAnswerLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            
+        } else {
+
+            cell.correctAnswerLabel.textColor = UIColor(red: 0.0/255.0, green: 153.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+            cell.answerPickedLabel.text = ""
+            cell.answerPickedLabel.textColor = UIColor.white
+        }
         return cell
     }
 
