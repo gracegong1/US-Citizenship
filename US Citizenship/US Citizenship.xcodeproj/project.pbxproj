@@ -39,6 +39,7 @@
 		844655CE2112AE3500664699 /* TestResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844655CD2112AE3400664699 /* TestResultsModel.swift */; };
 		847481FB21127D7900B1D131 /* ListTestQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */; };
 		847481FE2112857D00B1D131 /* AnsweredQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847481FD2112857D00B1D131 /* AnsweredQuestionModel.swift */; };
+		84BA7E772113B41F006C1621 /* ReviewResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA7E762113B41F006C1621 /* ReviewResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		844655CD2112AE3400664699 /* TestResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultsModel.swift; sourceTree = "<group>"; };
 		847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTestQTableViewCell.swift; sourceTree = "<group>"; };
 		847481FD2112857D00B1D131 /* AnsweredQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsweredQuestionModel.swift; sourceTree = "<group>"; };
+		84BA7E762113B41F006C1621 /* ReviewResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResultsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				843E3FE5210B8D5800351288 /* ListReviewQTableViewCell.swift */,
 				847481FA21127D7900B1D131 /* ListTestQTableViewCell.swift */,
 				8431C407210F78070091B463 /* AllQTableViewCell.swift */,
+				84BA7E762113B41F006C1621 /* ReviewResultsTableViewCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				8402E8442108F5F500DFCE8E /* QuestionDefault.swift in Sources */,
 				8420BA482106E72D00E4E4E0 /* ReviewResultsViewController.swift in Sources */,
+				84BA7E772113B41F006C1621 /* ReviewResultsTableViewCell.swift in Sources */,
 				8420BA542106E7F600E4E4E0 /* StatsPrevTestsViewController.swift in Sources */,
 				8420BA462106E71800E4E4E0 /* ReviewQuestionViewController.swift in Sources */,
 				8420BA252106E4C900E4E4E0 /* HomescreenViewController.swift in Sources */,

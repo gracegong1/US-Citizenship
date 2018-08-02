@@ -13,19 +13,24 @@ class StatsMainViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var testResults = CoreDataHelper.retrieveTestResults()
     
+    @IBOutlet weak var testResultsTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        testResults = CoreDataHelper.retrieveTestResults()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return testResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-        //downcast as cell class
+        let cell = tableView.dequeueReusableCell(withIdentifier: "testResultsTableViewCell", for: indexPath) as! TestResultsTableViewCell
+        let testResult = testResults[indexPath.row]
+        cell.statsTestPercentCorrectLabel.text = testResult.percentCorrect
+        cell.statsTestNumCorrectLabel.text = testResult.numberCorrect
+        
+        return cell
+        }
     }
-    
-    
-    @IBOutlet weak var testResultsTableView: UITableView!
-    
-}
+

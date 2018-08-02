@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+class TestResultsTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var statsTestPercentCorrectLabel: UILabel!
+    @IBOutlet weak var statsTestNumCorrectLabel: UILabel!
+    
+    @IBOutlet weak var statsTestTimestampLabel: UILabel!
+}

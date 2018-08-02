@@ -19,12 +19,22 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var reviewNumCorrectLabel: UILabel!
     
+    var reviewResult : ReviewResult?
+    var results2 = [ReviewResult]()
+    
     var ReviewNumCorrect = Int()
     override func viewDidLoad() {
-        reviewPercentCorrectLabel.text = String(Float(Double(ReviewNumCorrect) / 20.0 * 100)) + "%"
-        reviewPercentCorrectProgressView.progress = Float(Double(ReviewNumCorrect) / 20.0)
-        reviewNumCorrectLabel.text = "You answered " + String(ReviewNumCorrect) + " out of 20 correct"
+        reviewPercentCorrectLabel.text = String(Float(Double(ReviewNumCorrect) / 15.0 * 100)) + "%"
+        reviewPercentCorrectProgressView.progress = Float(Double(ReviewNumCorrect) / 15.0)
+        reviewNumCorrectLabel.text = "You answered " + String(ReviewNumCorrect) + " out of 15 correct"
         
+       reviewResult = CoreDataHelper.newReviewResult()
+        reviewResult?.percentCorrect = reviewPercentCorrectLabel.text
+        reviewResult?.numberCorrect = String(ReviewNumCorrect) + "/15"
+        
+        CoreDataHelper.save()
+        
+        results2 = CoreDataHelper.retrieveReviewResults()
     }
     
     var results = Results()
@@ -36,7 +46,7 @@ class ReviewResultsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 20
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

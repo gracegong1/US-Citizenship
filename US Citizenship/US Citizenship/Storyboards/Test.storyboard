@@ -363,6 +363,7 @@
                     <connections>
                         <outlet property="testNumberCorrectLabel" destination="326-k0-fA4" id="LO8-jl-wlq"/>
                         <outlet property="testPercentCorrectLabel" destination="ZRo-iO-5FE" id="2QA-Bg-y6D"/>
+                        <outlet property="testProgressView" destination="csn-CF-zYc" id="TDH-3O-IYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0iz-Xd-p4u" userLabel="First Responder" sceneMemberID="firstResponder"/>

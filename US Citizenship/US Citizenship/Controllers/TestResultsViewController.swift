@@ -15,6 +15,8 @@ class TestResultsViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var testNumberCorrectLabel: UILabel!
     
+    @IBOutlet weak var testProgressView: UIProgressView!
+    
     var results = [TestResult]()
     var testNumCorrect = Int()
     
@@ -25,19 +27,16 @@ class TestResultsViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         
         testPercentCorrectLabel.text = String(Float(Double(testNumCorrect) / 10.0 * 100)) + "%"
-//        reviewPercentCorrectProgressView.progress = Float(Double(ReviewNumCorrect) / 20.0)
+        testProgressView.progress = Float(Double(testNumCorrect) / 10.0)
         testNumberCorrectLabel.text = "You answered " + String(testNumCorrect) + " out of 10 correct"
         
         testResult =  CoreDataHelper.newTestResult()
         testResult?.percentCorrect = testPercentCorrectLabel.text
-        testResult?.numberCorrect = String(testNumCorrect)
-        
+        testResult?.numberCorrect = String(testNumCorrect) + "/10"
         
         
         CoreDataHelper.save()
         
-        print(testResult?.percentCorrect)
-        print(testResult?.numberCorrect)
         
         results = CoreDataHelper.retrieveTestResults()
         print(results.count)

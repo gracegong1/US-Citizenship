@@ -26,6 +26,11 @@ struct CoreDataHelper {
         return testResult
     }
     
+    static func newReviewResult() -> ReviewResult {
+        let reviewResult = NSEntityDescription.insertNewObject(forEntityName: "ReviewResult", into: context) as! ReviewResult
+        return reviewResult
+    }
+    
     static func save() {
         do {
             try context.save()
@@ -46,8 +51,24 @@ struct CoreDataHelper {
         }
     }
     
+    static func retrieveReviewResults() -> [ReviewResult] {
+        do {
+            let fetchRequest = NSFetchRequest<ReviewResult>(entityName: "ReviewResult")
+            let results = try context.fetch(fetchRequest)
+            return results
+        } catch let error {
+            print("Could not fetch \(error.localizedDescription)")
+            return []
+        }
+    }
+    
     static func delete(testResult: TestResult) {
         context.delete(testResult)
+        save()
+    }
+    
+    static func delete(reviewResult: ReviewResult) {
+        context.delete(reviewResult)
         save()
     }
 }

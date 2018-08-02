@@ -99,12 +99,12 @@ class ReviewQuestionViewController: UIViewController {
             
             ReviewQuestions.remove(at: ReviewQNumber)
             let current = 100 - ReviewQuestions.count
-            let max = 20
+            let max = 15
             
             if current <= max {
                 let ratio = Float(current) / Float(max)
                 QuestionsProgressView.progress = Float(ratio)
-                QuestionNumOfNumLabel.text = "Question \(current) of 20"
+                QuestionNumOfNumLabel.text = "Question \(current) of 15"
             }
         }
     }
@@ -216,7 +216,7 @@ class ReviewQuestionViewController: UIViewController {
     }
     
     @IBAction func ReviewNextBtn(_ sender: Any) {
-        if ReviewQuestions.count <= 80 {
+        if ReviewQuestions.count <= 85 {
             self; performSegue(withIdentifier: "displayReviewResults", sender: Any?.self)
         } else {
             PickReviewQuestion()
